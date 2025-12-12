@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ROOTPATH=$(git rev-parse --show-toplevel)
+sed -E "s@<doc notes='(.*)'>@${ROOTPATH}/helpers/doc.awk \1@e" ${ROOTPATH}/helpers/README.template.md > ${ROOTPATH}/README.md
